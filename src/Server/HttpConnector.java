@@ -34,9 +34,13 @@ public class HttpConnector implements Runnable{
 
     @Override
     public void run() {
-        System.out.println("Server runnning");
-        processors= new Stack<>();
-        executor= Executors.newCachedThreadPool();
+        try {
+            System.out.println("Server runnning");
+            processors = new Stack<>();
+            executor = Executors.newCachedThreadPool();
+        }catch(Throwable t){
+            t.printStackTrace();
+        }
         while(!stopped) {
             try {
                 Socket socket=serverSocket.accept();
