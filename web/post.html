@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <style>
+			.center{
+				position:relative;
+				 left:20%;
+				 right:20%;
+			     clear:both;
+			}
+            div{
+                width: 500px;
+            }
+            form{
+                padding-left:0;
+            }
+            li{
+                list-style-type:none;
+                position: relative;
+                left: 0px;
+            }
+            .board{
+                background-color: rgba(211, 217, 178, 0.27);
+            }
+		</style>
+	</head>
+	<body class="center">
+
+		<div class="board">
+			<ul>
+				#foreach($word in ${words})
+					<li>有人说： $word</li>
+				#end
+			</ul>
+		</div>
+        <div >
+            <form  method="post" >
+                说点什么:
+                <input type="text" name="word"/>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+	</body>
+</html>

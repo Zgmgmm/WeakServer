@@ -1,0 +1,30 @@
+[
+  {
+    "handler":"Handler.PUTHandler",
+    "url":["/put/*"]
+  },
+  {
+    "handler":"Handler.SampleHandler",
+    "url":["/sample*"]
+  },
+  {
+    "handler":"Handler.DownloadHandler",
+    "url":["/dl/*"]
+  },
+  {
+    "handler":"Handler.EchoHandler",
+    "url":["/echo"]
+  },
+  {
+    "handler":"Handler.DefaultHandler",
+    "url":["/static/*"]
+  },
+  {
+    "filter":"Filter.LogFilter",
+    "url":["*"]
+  },
+  {
+    "filter":"Filter.DateFilter",
+    "url":["*"]
+  }
+]
