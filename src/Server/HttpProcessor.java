@@ -1,6 +1,7 @@
 package Server;
 
 
+import Handler.DefaultHandler;
 import Handler.SampleHandler;
 
 import javax.annotation.processing.Processor;
@@ -16,7 +17,7 @@ public class HttpProcessor implements Runnable{
     HttpRequest request;
     HttpResponse response;
     FilterChain filterChain;
-    static HttpHandler handler=new SampleHandler();
+    static HttpHandler handler=new DefaultHandler();
     public HttpProcessor(Socket socket) {
         this.socket=socket;
     }
