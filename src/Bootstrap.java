@@ -24,5 +24,6 @@ public class Bootstrap {
 
         HttpConnector connector=new HttpConnector();
         connector.start();
+        System.out.println("Bootstrap");
     }
 }
