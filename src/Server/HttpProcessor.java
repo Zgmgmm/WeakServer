@@ -1,6 +1,9 @@
 package Server;
 
 
+import Handler.SampleHandler;
+
+import javax.annotation.processing.Processor;
 import javax.servlet.http.Cookie;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +16,7 @@ public class HttpProcessor implements Runnable{
     HttpRequest request;
     HttpResponse response;
     FilterChain filterChain;
+    static HttpHandler handler=new SampleHandler();
     public HttpProcessor(Socket socket) {
         this.socket=socket;
     }
@@ -28,7 +32,7 @@ public class HttpProcessor implements Runnable{
             parseRequestLine();
             parseHeaders();
             HttpMapper mapper=HttpMapper.getInstance();
-            HttpHandler handler=HttpMapper.getInstance().getHandler(request.getPath());
+            HttpHandler handler= HttpProcessor.handler;//HttpMapper.getInstance().getHandler(request.getPath());
             filterChain=new FilterChain(handler);
             filterChain.appendAll(mapper.getFilter(request.getPath()));
             filterChain.doFilter(request,response);
