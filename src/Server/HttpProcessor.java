@@ -32,10 +32,10 @@ public class HttpProcessor implements Runnable{
             //parse request info
             parseRequestLine();
             parseHeaders();
-            HttpMapper mapper=HttpMapper.getInstance();
+           // HttpMapper mapper=HttpMapper.getInstance();
             HttpHandler handler= HttpProcessor.handler;//HttpMapper.getInstance().getHandler(request.getPath());
             filterChain=new FilterChain(handler);
-            filterChain.appendAll(mapper.getFilter(request.getPath()));
+          //  filterChain.appendAll(mapper.getFilter(request.getPath()));
             filterChain.doFilter(request,response);
             //make response
             response.finishResponse();
