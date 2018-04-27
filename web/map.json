@@ -18,13 +18,5 @@
   {
     "handler":"Handler.DefaultHandler",
     "url":["/static/*"]
-  },
-  {
-    "filter":"Filter.LogFilter",
-    "url":["*"]
-  },
-  {
-    "filter":"Filter.DateFilter",
-    "url":["*"]
   }
 ]
