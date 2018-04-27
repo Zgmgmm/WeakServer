@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 
 public class HttpConnector implements Runnable{
     final public static int DEFAULT_PORT=80;
-    final public static String DEFAULT_HOST="127.0.0.1";
+    final public static String DEFAULT_HOST="0.0.0.0";
     private String scheme="http";
     private ServerSocket serverSocket;
     private Stack<HttpProcessor> processors;
