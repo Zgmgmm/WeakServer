@@ -40,6 +40,7 @@ public class HttpConnector implements Runnable{
         while(!stopped) {
             try {
                 Socket socket=serverSocket.accept();
+                System.out.println(socket.getRemoteSocketAddress());
                 executor.execute(new HttpProcessor(socket));
             } catch (IOException e) {
                 e.printStackTrace();
