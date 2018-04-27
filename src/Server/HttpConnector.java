@@ -43,7 +43,7 @@ public class HttpConnector implements Runnable{
         }
         while(!stopped) {
             try {
-                System.out.println("Server listening");
+                System.out.println("Server listening on "+serverSocket.getLocalSocketAddress());
                 Socket socket=serverSocket.accept();
                 System.out.println(socket.getRemoteSocketAddress());
                 executor.execute(new HttpProcessor(socket));
