@@ -43,6 +43,7 @@ public class HttpConnector implements Runnable{
         }
         while(!stopped) {
             try {
+                System.out.println("Server listening");
                 Socket socket=serverSocket.accept();
                 System.out.println(socket.getRemoteSocketAddress());
                 executor.execute(new HttpProcessor(socket));
@@ -53,6 +54,7 @@ public class HttpConnector implements Runnable{
     }
 
     public void start(){
+        stopped=false;
         Thread thread=new Thread(this);
         thread.start();
     }
